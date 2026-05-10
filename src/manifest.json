@@ -6,7 +6,7 @@
   "author": "David Harris",
   "browser_specific_settings": {
     "gecko": {
-      "id": "sender-domain-column@local",
+      "id": "sender-domain-column@jazztunes.github.io",
       "strict_min_version": "115.0"
     }
   },
