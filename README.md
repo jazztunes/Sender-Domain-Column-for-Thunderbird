@@ -8,9 +8,37 @@ Adds a **Sender Domain** column to Thunderbird's message list showing the apex d
 | `admin@help.xyz.com` | `xyz.com` |
 | `noreply@mail.bbc.co.uk` | `bbc.co.uk` |
 
-Useful for quickly spotting which company or service an email comes from, and for sorting/grouping messages by sender domain.
-
 ![Sender Domain column in Thunderbird message list](screenshot.png)
+
+## Why this is useful
+
+Thunderbird's default view shows whatever name the sender chose to display — which tells you nothing about where the email actually came from. The Sender Domain column cuts through that and shows the real origin domain at a glance.
+
+### Spot spam and phishing faster
+
+Spam and phishing emails often arrive with legitimate-looking display names ("PayPal Support", "Your Bank") but the domain tells the real story. A glance at the Sender Domain column immediately flags anything that doesn't come from the domain you'd expect. You don't need to open the email or hover over anything — the domain is right there in the list.
+
+### Sort and group by sender domain
+
+Click the **Sender Domain** column header to sort your inbox by domain. This clusters all emails from the same organisation together regardless of which address or subdomain they used — `billing@`, `noreply@`, `support@` all roll up to the same domain. Great for:
+
+- Reviewing everything from a vendor before a meeting
+- Seeing how much mail you get from a particular company
+- Batch-selecting and filing messages by sender
+
+### Manage mailing lists and newsletters
+
+Marketing emails and newsletters often come from sending platforms (`mailchimp.com`, `sendgrid.net`, `klaviyo.com`) rather than the brand's own domain. Sorting by Sender Domain makes it easy to find all your newsletter mail in one sweep, even when the display names are all different.
+
+### Audit unfamiliar senders
+
+When clearing a backlog or reviewing an unfamiliar account, sorting by domain gives you a structured view of who has been sending mail — much faster than reading individual From addresses one by one.
+
+### Filter and search more precisely
+
+Once you know the domain you care about, Thunderbird's search and filter tools become more powerful. Sort by Sender Domain, select a block of messages, and apply a label, move them, or delete them in bulk.
+
+---
 
 ## Requirements
 
@@ -30,15 +58,15 @@ After installing, the column is hidden by default. To show it:
 1. Right-click anywhere on the **column header bar** in your message list.
 2. Tick **Sender Domain** in the menu.
 
-You can drag it to reorder it, and click the header to sort by domain.
+You can drag it to reorder it and click the header to sort by domain.
 
 ## Building from source
 
 Requires Windows with PowerShell (no extra tools needed).
 
 ```bat
-git clone <this repo>
-cd ThunderbirdDomainColumn
+git clone https://github.com/jazztunes/Sender-Domain-Column-for-Thunderbird
+cd Sender-Domain-Column-for-Thunderbird
 build.bat
 ```
 
@@ -50,7 +78,7 @@ The extension keeps only the **apex domain** — the registered part of the host
 
 - Simple domains (`abc.com`, `example.org`) are kept as-is.
 - Subdomains (`mail.`, `help.`, `cdn.`) are stripped.
-- Country-code second-level domains (`co.uk`, `com.au`, `gov.uk`, etc.) are detected and preserved with their parent label, so `mail.bbc.co.uk` becomes `bbc.co.uk` rather than just `co.uk`.
+- Country-code second-level domains (`co.uk`, `com.au`, `gov.uk`, etc.) are detected and preserved with their parent label, so `mail.bbc.co.uk` becomes `bbc.co.uk` rather than `co.uk`.
 
 ## License
 
