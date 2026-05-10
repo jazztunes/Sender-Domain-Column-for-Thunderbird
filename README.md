@@ -10,6 +10,8 @@ Adds a **Sender Domain** column to Thunderbird's message list showing the apex d
 
 Useful for quickly spotting which company or service an email comes from, and for sorting/grouping messages by sender domain.
 
+![Sender Domain column in Thunderbird message list](screenshot.png)
+
 ## Requirements
 
 - Thunderbird 115 or newer
